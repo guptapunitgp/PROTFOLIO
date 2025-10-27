@@ -1,0 +1,118 @@
+.krishna-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.krishna-container {
+  position: relative;
+  width: 360px;
+  max-width: 70vw;
+}
+
+/* Krishna Image */
+.krishna-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+}
+
+/* Finger glow position */
+.krishna-container {
+  --finger-left: 67.5%;
+  --finger-top: 13.8%;
+  --finger-size: 84px;
+}
+
+/* Divine concentrated glow */
+.finger-glow {
+  position: absolute;
+  left: var(--finger-left);
+  top: var(--finger-top);
+  width: var(--finger-size);
+  height: var(--finger-size);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 20;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(255, 245, 200, 0.95) 0%,
+    rgba(255, 220, 110, 0.85) 20%,
+    rgba(255, 180, 50, 0.55) 38%,
+    rgba(255, 140, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0) 85%);
+  filter: blur(6px) saturate(1.1);
+  animation:
+    finger-rotate 6s linear infinite,
+    finger-pulse 1.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes finger-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  to { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+@keyframes finger-pulse {
+  0% { box-shadow: 0 0 0px rgba(255,220,120,0.25); transform: translate(-50%, -50%) rotate(0) scale(0.98); }
+  50% { box-shadow: 0 0 22px rgba(255,220,120,0.45); transform: translate(-50%, -50%) rotate(180deg) scale(1.06); }
+  100% { box-shadow: 0 0 0px rgba(255,220,120,0.25); transform: translate(-50%, -50%) rotate(360deg) scale(0.98); }
+}
+
+/* Ambient divine aura */
+.ambient-halo {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 420px;
+  height: 420px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(circle at 50% 36%,
+    rgba(255, 235, 170, 0.18) 0%,
+    rgba(255, 210, 110, 0.12) 18%,
+    rgba(255, 180, 60, 0.06) 36%,
+    rgba(0,0,0,0) 65%);
+  filter: blur(28px) saturate(1.05);
+  opacity: 0.95;
+  animation: halo-breathe 4.8s ease-in-out infinite;
+}
+
+@keyframes halo-breathe {
+  0% { transform: translate(-50%, -50%) scale(0.985); opacity: 0.88; }
+  50% { transform: translate(-50%, -50%) scale(1.02); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0.985); opacity: 0.88; }
+}
+
+/* Extra rim highlight */
+.krishna-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  width: 60%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 8;
+  background: radial-gradient(ellipse at center,
+    rgba(255,255,210,0.06) 0%,
+    rgba(255,255,210,0.03) 25%,
+    rgba(0,0,0,0) 60%);
+  filter: blur(12px);
+  mix-blend-mode: screen;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .krishna-container { width: 300px; }
+  .krishna-container { --finger-left: 66.7%; --finger-top: 15%; --finger-size: 66px; }
+  .ambient-halo { width: 320px; height: 320px; top: 48%; }
+}
