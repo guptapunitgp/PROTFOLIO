@@ -10,21 +10,21 @@ function Projects() {
       des: 'Developed a full-featured AI-powered e-commerce website using the MERN stack with Firebase and Google OAuth authentication. Implemented dynamic product listings, smart cart and wishlist, and real-time product search. Added dark mode and lazy loading for optimized performance and user experience.',
       mission: 'Full-Stack Developer — backend API design, system analysis, frontend UI development, and deployment.',
       language: 'React.js, Node.js, Express.js, MongoDB, Firebase, Tailwind CSS, Redux',
-      images: '/BANANA.PNG',
+      images: '/banana.png',
     },
     {
       name: '3D Slider Showcase',
       des: 'Created an engaging 3D slider to demonstrate frontend design and CSS animation skills. Used 3D transforms, perspective, and transitions to create smooth, interactive effects for a visually appealing user interface.',
       mission: 'Frontend Developer — implemented creative UI design using HTML, CSS animations, and transitions.',
       language: 'HTML5, CSS3, JavaScript (for interactivity)',
-      images: '/3DSLIDER.PNG',
+      images: '/slider.png',
     },
     {
       name: 'Library Management System',
       des: 'Built a full-stack library management system with secure role-based access for admin and users. Added functionalities like book search, issue tracking, and real-time notifications using Socket.IO.',
       mission: 'Backend Developer — system design, database modeling, and frontend integration for real-time updates.',
       language: 'React.js, Node.js, Express.js, MongoDB, Socket.IO',
-      images: '/lms.PNG',
+      images: '/lms.png',
     },
     
   ]);
